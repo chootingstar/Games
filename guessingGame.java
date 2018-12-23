@@ -58,11 +58,15 @@ public class GuessingGame {
 			 * collect the first input. When I added the testing code to show what the random number is, even when
 			 * I entered the correct number, it kept telling me to think smaller. I theorize that this is due to
 			 * the Scanner being from outside of the loop.*/
+			//I was right, as soon as I moved the Scanner into the loop, it could read what the user input next.
+			//When the program could read what the user input next, it compared the new answers to the hidden
+			//number and gave the appropriate response.
 			
 		} while (count < 1);
 		/*The loop is infinite because there is no pause for inputting new answers, so the program goes through
 		 * the same checks every time with the same conditions. The counter has yet to be triggered so I have yet
 		 * to test it (even though all logic I hold states it works)*/
+		//Waddya know, it works just fine
 			System.out.println("That's right! The answer is " + randNum1);
 	}
 	
