@@ -26,7 +26,7 @@ public class HighLow {
 			//I was wrong, horribly wrong, and for the record type casting does nothing to help
 			
 			
-			System.out.println(userChar1);
+			//System.out.println(userChar1); No longer needed
 			//Added to find out what's going on, turns out that userChar is equal to a whole string of something
 			//and it's not "no"
 			//Turns out that it was printing userChar and I needed userChar1
@@ -34,9 +34,12 @@ public class HighLow {
 			//System.out.println(userChar1 instanceOf userChar);
 			//Something's wrong there. I'll move away from instanceOf
 			
-			if (userChar1 == "no") { //changed "n" to "no" due to the same reason as when I changed the above message
+			if (userChar1.equals("no")) { //changed "n" to "no" due to the same reason as when I changed the above message
 				//There was a problem when I said "n" because the whole thing just looped again when I typed n
-				System.out.println("Huh, this is odd");
+				//using .equals to see if this compares the value
+				//... It does! Huzzah!
+				//I learned about .equals from a post on stackoverflow answering the same question as mine
+				System.out.println("Huh, that is odd. Okay then.");
 				edd = false;
 			}
 			//adding a way for the user to say yes or no was very difficult, but so worth it
@@ -47,7 +50,7 @@ public class HighLow {
 	static void hiLo() {
 		//Made a static void so I could give messages and communicate with the program
 		//randNum1 was created so that the compiler understands how to use it.
-		int randNum1 = randGen(-10, 10); //edited to reflect the range
+		int randNum1 = randGen(-100, 1000); //edited to reflect the range
 		//I'm trying something new and calling methods within the class by adding the modifier static to thein name
 
 		int count = 0;
