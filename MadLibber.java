@@ -9,10 +9,7 @@ public class MadLibber {
 		 * telling the user that they are a funny person*/
 		System.out.println("Hi! Welcome to MadLibber! The Mad Libs program filled with 3 Mad Lib adventures!");
 		System.out.println("To start, type out which of these adventures you want to play:");
-		System.out.println("\n Space \n Magical \n Romance");
-		//Changed the names of the adventures to compensate input limitations
-		System.out.println(" ");
-		System.out.println("Type the name of the adventure you want below.");
+		
 		
 		
 		int counter2 = 0;
@@ -20,13 +17,20 @@ public class MadLibber {
 		while (counter2 < 1) {
 			int counter = 0;
 			while (counter < 1) {
+				//*********************************************************
+				//Moved below from above text so that you are prompted each time the adventures to choose from
+				System.out.println("\n Space \n Magical \n Romance");
+				//Changed the names of the adventures to compensate input limitations
+				System.out.println(" ");
+				System.out.println("Type the name of the adventure you want below.");
+				//********************************************************
 				Scanner adventure = usersWord();
 				String a = adventure.next();
 				// First time using a switch block right, I've learned quite a bit
 				// such as a switch cannot accept Scanner classes
 				
 				//I had to create a new systemoutprinln to tell me what's going on, apparently a != the case I want
-				System.out.println(a);
+				//System.out.println(a); No longer needed, and it was getting distracting
 				//OOohh, so what's happening is that the Scanner only accepts one word and ignores everything after
 				//white space
 				switch (a) {
@@ -79,21 +83,44 @@ public class MadLibber {
 	}
 	
 	static void preTeenRomance() {
-		System.out.println("Place holder");
+		System.out.println("This is a Pre-teen romance novlette!");
 		/*multiple prompts for nouns, verbs, adjectives, adverbs, etc.
 		 * Preteen romance story as accurate to winning awards and thirsty women in their 30s is like
 		 * girlName + girlLastName + " is in love with " + guyName + guyLastName + ", but they couldn't be
 		 * together because " + guyName + " is " + preposition + ofOrA + reasonInOneWord + "!?"*/
+		Scanner rWord = usersWord();
 		
+		System.out.println("So charmer, what's the girl's first name?");
+		String girlName = rWord.next();
+		System.out.println("Nice! How about that last name?");
+		String girlLastName = rWord.next();
+		System.out.println("What's the lucky guy's name?");
+		String guyName = rWord.next();
+		System.out.println("What's his last name?");
+		String guyLastName = rWord.next();
+		System.out.println("Cool, cool. Now tell me your favorite mythical creature.");
+		String mythologicalCreature = rWord.next();
+		System.out.println("Type and action word in plural form.");
+		String pluralAction = rWord.next();
+		System.out.println("How do you say there are multiples of that mythical creature?");
+		String mythologicalCreaturePlural = rWord.next();
+		System.out.println("Oh yeah, know a great place for a date that I can say in one word?");
+		String locationForDating = rWord.next();
+		System.out.println("Past tense action word here.");
+		String action = rWord.next();
+		System.out.println("Past tense verb here.");
+		String pastTenseVerb = rWord.next();
+		System.out.println("What's a good name for a secret organization?");
+		String groupGuyIsIn = rWord.next();
 		
-		/* girlName + girlLastName + " is in love with " + guyName + guyLastName + ", but they couldn't be
-		 * together because " + girlName + " is a " + mythologicalCreature + ", and " + guyName + pluralAction
-		 * + mythologicalCreaturePlural + ". However, " + girlName + " ignores it and goes out with him to "
-		 * + locationForDating " for their first date. " + guyName " finds out about " + girlName + " being a "
-		 * + mythologicalCreature " because she " + action + " in front of him. " + guyName + " didn't care
-		 * that " + girlName + " is a " + mythologicalCreature + " because she " + pastTenseVerb + " and he
-		 * really likes that. Now, they need to fight against the " + mythologicalCreaturePlural + " and the "
-		 * + groupGuyIsIn " to stay with each other forever."*/
+		System.out.println(girlName + " " + girlLastName + " is in love with " + guyName + " " + guyLastName + ", but they couldn't be");
+		System.out.println("together because " + girlName + " is a " + mythologicalCreature + ", and " + guyName + " " + pluralAction);
+		System.out.println(mythologicalCreaturePlural + ". However, " + girlName + " ignores it and goes out with him to the ");
+		System.out.println(locationForDating + " for their first date. " + guyName + " finds out about " + girlName + " being a ");
+		System.out.println(mythologicalCreature + " because she " + action + " in front of him. " + guyName + " didn't care");
+		System.out.println("that " + girlName + " is a " + mythologicalCreature + " because she " + pastTenseVerb + " and he");
+		System.out.println("really likes that. Now, they need to fight against the " + mythologicalCreaturePlural + " and the ");
+		System.out.println(groupGuyIsIn + " to stay with each other forever.");
 	}
 	
 	static Scanner usersWord() {
