@@ -14,10 +14,11 @@ public class MadLibber {
 		System.out.println(" ");
 		System.out.println("Type the name of the adventure you want below.");
 		
-		int counter = 0;
+		
 		int counter2 = 0;
 
 		while (counter2 < 1) {
+			int counter = 0;
 			while (counter < 1) {
 				Scanner adventure = usersWord();
 				String a = adventure.next();
@@ -54,8 +55,10 @@ public class MadLibber {
 			System.out.println("Type yes or no");
 			Scanner con = usersWord();
 			String c = con.next();
-			if (c.equals("yes"))
-				counter2++;
+			if (c.equals("no"))//Changed from yes to no (out of lack of foresight)
+				counter2++;//Apparently I did not have the foresight that I'd get an endless loop skipping the
+			//inner loop so long as I say yes. I'll edit the counter's placement.
+			//Fixed
 		}
 	}
 	
