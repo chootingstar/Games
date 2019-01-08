@@ -33,6 +33,7 @@ public class GuessingGUI {
 		while (edd == true) {
 			//I can't get the message to be displayed at the top of the window!
 			JLabel label = new JLabel("Guess the number!", JLabel.CENTER);
+			label.setBounds(50, 50, 10, 30);
 			
 		label.setAlignmentX(0);
 //	label.setVerticalTextPosition(JLabel.TOP); Doesn't do much
@@ -105,9 +106,7 @@ public class GuessingGUI {
 			int userAns1 = userAns.nextInt();
 			/*The counter does not solve any infinite loop problems, user cant enter anymore answers. I'm going to move
 		to move the userAns into the do loop so that the user can enter new answers at the start of each loop*/
-			final JTextField tf = new JTextField();
-			tf.setBounds(250, 380, 250, 50);
-			tf.setFont(new Font("Courier new", Font.BOLD, 20));
+			
 			//Added textfield even though I want it as a label
 			if (userAns1 == randNum1) {
 				count = count + 1;
@@ -117,17 +116,18 @@ public class GuessingGUI {
 				attempts++;
 				b.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						tf.setText("Sorry, that isn't right");
+						.setText("Sorry, that isn't right")};
+				}
 				//once I get this working, I'll create a new if-else statement, or a switch block to give user hints
 				if (userAns1 > randNum1) {
 					b.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent e) {
-							tf.setText("think smaller and...");
+							tf.setText("think smaller and...");}
 				} else if (userAns1 < randNum1) {
 					b.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent e) {
 							tf.setText("think bigger and...");
-				}
+				}}}}
 				//added a system for checking if the user got the right number, but it keeps saying that the
 				//number is bigger. Hmm...
 				System.out.println("Try again!");
@@ -157,7 +157,7 @@ public class GuessingGUI {
 	}
 
 	// I put the functions that the main calls after the main
-	static Scanner userNum() {
+	public Scanner userNum() {
 		
 		Scanner userInput = new Scanner(System.in);
 		
@@ -168,7 +168,7 @@ public class GuessingGUI {
 	
 	/*Make a new Scanner method*/
 
-	static int randGen(int min, int max) {
+	public int randGen(int min, int max) {
 		// double num = Math.random();
 
 		// I feel so proud of making the random number between 1 and 100!
