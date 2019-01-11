@@ -17,11 +17,15 @@ import javax.swing.SwingConstants;
 import java.awt.FlowLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import javax.swing.JLayeredPane;
+
+
 
 public class GuessingGUI extends JFrame {
-	private JTextField txtEnterHere;
 	private JTextField textField;
 	public GuessingGUI() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //Apparently I need this to be in the constructor for it
+		//to work
 		getContentPane().setForeground(Color.WHITE);
 		getContentPane().setBackground(Color.DARK_GRAY);
 		getContentPane().setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
@@ -38,7 +42,17 @@ public class GuessingGUI extends JFrame {
 		textField.setColumns(8);
 		
 		JButton btnGuessTheNumber = new JButton("Guess the Number!");
+		btnGuessTheNumber.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
 		getContentPane().add(btnGuessTheNumber);
+		
+		JLayeredPane layeredPane = new JLayeredPane();
+		getContentPane().add(layeredPane);
+		
+		JLabel lblSorry = new JLabel("Sorry, that isn't right. That's too high.");
+		getContentPane().add(lblSorry);
 	}
 	// Imported Scanner and changed name to upper case
 		// Copied everything from my GuessingGame.java so I could edit it and create the
@@ -47,6 +61,8 @@ public class GuessingGUI extends JFrame {
 			GuessingGUI gg = new GuessingGUI();
 			gg.setSize(new Dimension(300, 300));
 			gg.setVisible(true);
+			call();
+			
 		}
 		
 		static void call() {
@@ -71,6 +87,9 @@ public class GuessingGUI extends JFrame {
 			}
 			System.out.println("Thanks for playing!");
 		}
+		
+		public static int attempts = 1;
+			//Now with an attempt counter!
 
 		static void hiLo() {
 			//Made a static void so I could give messages and communicate with the program
@@ -81,8 +100,7 @@ public class GuessingGUI extends JFrame {
 			int count = 0;
 			//This counter should solve any problems of infinite loops
 
-			int attempts = 1;
-			//Now with an attempt counter!
+			
 
 			do{
 
