@@ -23,6 +23,9 @@ import javax.swing.JLayeredPane;
 
 public class GuessingGUI extends JFrame {
 	private JTextField textField;
+	public static int attempts = 1;
+			//Now with an attempt counter!
+	
 	public GuessingGUI() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //Apparently I need this to be in the constructor for it
 		//to work
@@ -57,13 +60,7 @@ public class GuessingGUI extends JFrame {
 	// Imported Scanner and changed name to upper case
 		// Copied everything from my GuessingGame.java so I could edit it and create the
 		// HighLow.java
-		public static void main(String args[]) {
-			GuessingGUI gg = new GuessingGUI();
-			gg.setSize(new Dimension(300, 300));
-			gg.setVisible(true);
-			call();
-			
-		}
+		
 		
 		static void call() {
 			boolean edd = true;
@@ -88,8 +85,7 @@ public class GuessingGUI extends JFrame {
 			System.out.println("Thanks for playing!");
 		}
 		
-		public static int attempts = 1;
-			//Now with an attempt counter!
+		
 
 		static void hiLo() {
 			//Made a static void so I could give messages and communicate with the program
@@ -163,5 +159,13 @@ public class GuessingGUI extends JFrame {
 
 			// To make a range between -100 and 1000 I looked to the Internet.
 			return (int) (Math.random() * ((max - min) + 1)) + min;
+		}
+		
+		public static void main(String args[]) {
+			GuessingGUI gg = new GuessingGUI();
+			gg.setSize(new Dimension(300, 300));
+			gg.setVisible(true);
+			call();
+			
 		}
 	}
