@@ -50,6 +50,8 @@ public class GuessingGUI extends JFrame {
 			}
 		});
 		getContentPane().add(btnGuessTheNumber);
+		
+		
 
 		lblSorry = new JLabel("Get rid of this");
 		getContentPane().add(lblSorry);
